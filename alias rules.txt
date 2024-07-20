@@ -1,0 +1,99 @@
+We will be making a Visual Studio Code extension that will read a file with an extension of .alias and color code it similar to GitHub color coding code previews.
+The attached test.alias has a few alias commands and has comments above each one describing what I should see with this extension activated.
+
+The extension will be called crc-aliases.
+
+I already have the base folder (crc-aliases) setup along with these files that I have been editing:
+.eslintrc.json
+.gitignore
+.vscode
+.vscode-test.mjs
+.vscodeignore
+CHANGELOG.md
+language-configuration.json
+node_modules
+out
+package-lock.json
+package.json
+README.md
+src
+syntaxes
+themes
+tsconfig.json
+vsc-extension-quickstart.md
+
+Inside the syntaxes folder, I have a file "alias.tmLanguage.json"
+Inside the themes folder, I have a file "Alias Color Theme.json"
+
+Here is what I want:
+
+This extension should be case-insensative. Case does not matter in alias files.
+
+Look at a line, if the first non-space character is not a period, then that line will be considered commented-out and should be a dark grey (#3e4a38).
+A space or tab prefixing the first period of a command does not mean it is a comment line. A line that has prefixing tabs or spaces but the first non-space/tab character is a period, then that is an alias line.
+
+If a line has a ; character, that character and everything after it should be considered commented out and grey.
+
+If the line is not a commented-out line, then the first perdoid and the string of characters after it up to but not including the first space is considered the "Alias Command" and should be considered a "Custom Alias Command" and colored green (#00FF00) by default. There is one exception to the "up to but not including the space" rule and that will be a command ".am RTE" but we will discuss this further down in this briefing.
+
+The following is a library of "Native Dot Commands". These commands should always be color coded as Red (#FF0000). The first 2 commands are not litteral, but rather the # would be any integer. The ".am RTE" command is the exception we spoke about earlier and the entire thing should be red. These commands should always be colored red if it is the first command on a line that is not commented out.
+.##.
+.##
+.acinfo
+.am RTE
+.atis
+.autotrack
+.chat
+.clear
+.contactme
+.copy
+.fp
+.metar
+.wx
+.msg
+.openurl
+.reloadaliases
+.showlogs
+.showprofiles
+.ver
+.wallop
+.secondaryfreqs
+.ff
+
+These are called "Alias Variables" and should be colored purple regardless if there is a space/tab/characters before or after them. Example: "prefixingtext$squawksuffixingtextorcharacters", in this example, the string of characters "$squawk" should be purple while everything else is not color coded.
+$squawk
+$route
+$arr
+$dep
+$cruise
+$calt
+$callsign
+$aircraft
+$com1
+$myrealname
+$winds
+$time
+$alt
+$temp
+
+These are "Alias Functions" and should be a lighter purple than the Alias Variables regardless if there is a space/tab/characters before or after them. Example: "prefixingtext$context()suffixingtextorcharacters", in this example, the string of characters "$context()" should be light purple while everything else is not color coded.
+The parenthesis should also be light purple.
+There could be data within the parenthesis at times but the parenthesis should always be light purple.
+$context()
+$metar()
+$altim()
+$wind()
+$type()
+$radioname()
+$freq()
+$atccallsign()
+$dist()
+$bear()
+$oclock()
+$ftime()
+$uc()
+$lc()
+
+We also have Alias Arguement Variables.
+You can identify an Alias Arguement Variable because it is a digit prefixed by the dollar symbol ($1 $2 $3).
+The $ and the digit should both be yellow (#FFD700) regardless if there is a non-digit character, space, or tab before or after it. Example: "prefixingtext$3suffixingtextorcharacters", in this example, the string of characters "$3" should be yellow while everything else is not color coded.
