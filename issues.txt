@@ -1,3 +1,0 @@
-It works for the most part.
-
-Now we need to find a way to have it provide different colors if there is a variable or something inside of the Alias Function ()'s.
