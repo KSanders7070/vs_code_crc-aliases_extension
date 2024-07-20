@@ -1,0 +1,9 @@
+Custom Dot Commands = Green
+
+Native Dot Commands = Red
+
+Variables = Purple
+
+Variable Arguements = Yellow
+
+Alias Functions = Blue
