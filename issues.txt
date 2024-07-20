@@ -1,0 +1,15 @@
+This looks better. Here are the issues that are still here:
+
+1) In the following lines, .MSG and .OPENURL should be highlighted red but are not color coded at all.
+.test3 .MSG $atccallsign($1) *** AAA - $aircraft_ $dep-$arr, $route
+.COMMANDS .openurl https://refs.clevelandcenter.org/references/alias/
+
+2) In the following line, $aircraft is color coded light purple but should be just purple but the $type() surrounding it is light purple as it should be.
+.SEEAC .OPENURL https://www.google.com/search?site=&tbm=isch&source=hp&biw=1366&bih=606&q=$type($aircraft)+aircraft&oq=$type($aircraft)+aircraft
+
+3) In the following line, $alt is highlighted purple while im() is not highlighted at all. I think this is because $alt is an Alias Variable but we need to be able to tell the difference between $alt and $altim()
+.testAliasFunctions $altim()
+
+4) In the following lines, $metar() and $oclock() are highlighted light purple as they should be but $dep and $arr are highlighted light purple when they should be just purple.
+.testAliasFunctionsWithVariable $metar($dep)
+.testAliasFunctionsWithVariable $oclock($arr)
