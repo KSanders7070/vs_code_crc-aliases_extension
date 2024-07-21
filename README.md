@@ -3,6 +3,9 @@
 
 Welcome to the CRC-Aliases Visual Studio Code extension! This extension is designed to help you work with alias files by providing syntax highlighting and other useful features.
 
+[Extension URL](https://marketplace.visualstudio.com/items?itemName=KyleSanders.crc-aliases)  
+[Hub URL](https://marketplace.visualstudio.com/manage/publishers/KyleSanders/extensions/crc-aliases/hub)
+
 ## Features
 
 - **Custom Dot Commands**: Highlighted in **Green**.
