@@ -1,0 +1,137 @@
+{
+  "name": "Alias",
+  "scopeName": "source.alias",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#native-dot-commands"
+    },
+    {
+      "include": "#alias-commands"
+    },
+    {
+      "include": "#alias-functions"
+    },
+    {
+      "include": "#alias-functions-end"
+    },
+    {
+      "include": "#alias-variables"
+    },
+    {
+      "include": "#alias-argument-variables"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.semicolon",
+          "match": ";.*"
+        },
+        {
+          "name": "comment.line.default",
+          "match": "^[^\\s.].*"
+        }
+      ]
+    },
+    "native-dot-commands": {
+      "patterns": [
+        {
+          "name": "keyword.control.native-dot-command",
+          "match": "(?i)(?<!\\S)\\.\\d{2}\\.(?!\\S)",
+          "captures": {
+            "0": {
+              "name": "keyword.control.native-dot-command"
+            }
+          }
+        },
+        {
+          "name": "keyword.control.native-dot-command",
+          "match": "(?i)(?<!\\S)\\.\\d{2}(?!\\S)",
+          "captures": {
+            "0": {
+              "name": "keyword.control.native-dot-command"
+            }
+          }
+        },
+        {
+          "name": "keyword.control.native-dot-command",
+          "match": "(?i)\\.(acinfo|am\\sRTE|atis|autotrack|chat|clear|contactme|copy|fp|metar|wx|msg|openurl|reloadaliases|showlogs|showprofiles|ver|wallop|secondaryfreqs|ff)\\b",
+          "captures": {
+            "0": {
+              "name": "keyword.control.native-dot-command"
+            }
+          }
+        }
+      ]
+    },
+    "alias-commands": {
+      "patterns": [
+        {
+          "name": "keyword.other.alias-command",
+          "match": "(?i)^\\s*\\.\\S+",
+          "captures": {
+            "0": {
+              "name": "keyword.other.alias-command"
+            }
+          }
+        }
+      ]
+    },
+    "alias-functions": {
+      "patterns": [
+        {
+          "name": "variable.parameter.alias-function",
+          "match": "(?i)\\$(context|metar|altim|wind|type|radioname|freq|atccallsign|dist|bear|oclock|ftime|uc|lc)\\(",
+          "captures": {
+            "0": {
+              "name": "variable.parameter.alias-function"
+            }
+          }
+        }
+      ]
+    },
+    "alias-functions-end": {
+      "patterns": [
+        {
+          "name": "variable.parameter.alias-function",
+          "match": "\\)",
+          "captures": {
+            "0": {
+              "name": "variable.parameter.alias-function"
+            }
+          }
+        }
+      ]
+    },
+    "alias-variables": {
+      "patterns": [
+        {
+          "name": "variable.parameter.alias-variable",
+          "match": "\\$(?i:squawk|route|arr|dep|cruise|calt|callsign|aircraft|com1|myrealname|winds|time|alt|temp)",
+          "captures": {
+            "0": {
+              "name": "variable.parameter.alias-variable"
+            }
+          }
+        }
+      ]
+    },
+    "alias-argument-variables": {
+      "patterns": [
+        {
+          "name": "variable.parameter.alias-argument-variable",
+          "match": "(?i)\\$\\d+",
+          "captures": {
+            "0": {
+              "name": "variable.parameter.alias-argument-variable"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
