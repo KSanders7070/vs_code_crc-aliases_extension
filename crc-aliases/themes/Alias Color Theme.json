@@ -1,0 +1,48 @@
+{
+  "name": "Alias Color Theme",
+  "type": "dark",
+  "tokenColors": [
+    {
+      "scope": "comment.line.semicolon",
+      "settings": {
+        "foreground": "#3e4a38"
+      }
+    },
+    {
+      "scope": "comment.line.default",
+      "settings": {
+        "foreground": "#3e4a38"
+      }
+    },
+    {
+      "scope": "keyword.control.native-dot-command",
+      "settings": {
+        "foreground": "#FF0000"
+      }
+    },
+    {
+      "scope": "keyword.other.alias-command",
+      "settings": {
+        "foreground": "#00FF00"
+      }
+    },
+    {
+      "scope": "variable.parameter.alias-variable",
+      "settings": {
+        "foreground": "#c902c9"
+      }
+    },
+    {
+      "scope": "variable.parameter.alias-function",
+      "settings": {
+        "foreground": "#0969DA"
+      }
+    },
+    {
+      "scope": "variable.parameter.alias-argument-variable",
+      "settings": {
+        "foreground": "#FFD700"
+      }
+    }
+  ]
+}

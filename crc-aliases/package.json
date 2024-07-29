@@ -1,0 +1,58 @@
+{
+  "name": "crc-aliases",
+  "displayName": "CRC Aliases",
+  "description": "Color coding for CRC alias files",
+  "version": "1.0.0",
+  "publisher": "KyleSanders",
+  "engines": {
+    "vscode": "^1.91.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KSanders7070/vs_code_crc-aliases_extension.git"
+  },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:alias"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.91.0",
+    "@vscode/test-electron": "^2.0.0",
+    "mocha": "^9.0.0",
+    "@types/mocha": "^9.0.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "alias",
+        "aliases": ["Alias", "alias"],
+        "extensions": [".alias"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "alias",
+        "scopeName": "source.alias",
+        "path": "./syntaxes/alias.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Alias Color Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Alias Color Theme.json"
+      }
+    ]
+  }
+}
