@@ -1,0 +1,21 @@
+This line is not prefixed with a period; therefore, it should be greyed out.
+
+# Basic Commands
+.test1 This is a basic alias command.
+.test2 This is a basic alias command with a comment out to follow. ; this part should be greyed out beginning with the ;
+
+# Alias Variables
+.testAliasVariables $squawk $route $arr $dep $cruise $calt $callsign $aircraft $com1 $myrealname $winds $time $alt $temp
+
+# Alias Functions
+.testAliasFunctions $context() $metar() $altim() $wind() $type() $radioname() $freq() $atccallsign() $dist() $bear() $oclock() $ftime() $uc() $lc()
+
+# Native Dot Commands
+.testNativeDotCommands .11. .11 .acinfo .am RTE .atis .autotrack .chat .clear .contactme .copy .fp .metar .wx .msg .openurl .reloadaliases .showlogs .showprofiles .ver .wallop .secondaryfreqs .ff
+
+# Example commands
+.M .MSG $atccallsign($1)
+.test3 .MSG $atccallsign($1) *** AAA - $aircraft_ $dep-$arr, $route
+.COMMANDS .openurl https://refs.clevelandcenter.org/references/alias/
+.GitHubTest .openurl https://github.com/$1/vs_code_crc-aliases_extension
+.MSPHSTINF .FF BDOGG MNDEE PRAMN HITTL NANCZ HSTIN YUPER DABOY BBERD ZZEEE
